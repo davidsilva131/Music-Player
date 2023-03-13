@@ -6,7 +6,7 @@ import Discover from "../components/pages/Discover";
 import Sidebar from "../components/sidebar/Sidebar";
 const Router = () => {
   return (
-    <div className="w-screen flex">
+    <div className="w-screen flex flex-col md:flex-row ">
       <BrowserRouter>
         <Routes >
           <Route element={<Sidebar />}>

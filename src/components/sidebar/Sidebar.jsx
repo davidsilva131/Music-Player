@@ -1,4 +1,5 @@
 import { Outlet, useNavigate } from "react-router";
+import menuDots from "../../assets/menu-dots.svg"
 const Sidebar = () => {
   const navigate = useNavigate()
   const Links = [
@@ -29,10 +30,11 @@ const Sidebar = () => {
   }
   return (
     <>
-      <header className="w-60 h-screen flex flex-col object-left bg-black items-center py-10 gap-36">
-        <aside className="text-emerald-400 font-serif text-3xl">MusicPlayer</aside>
+      <header className="w-full h-20 p-5 md:w-60 md:h-screen flex md:flex-col justify-between md:justify-start md:py-10 bg-black items-center gap-36">
+        <aside className=" text-emerald-400 font-serif text-3xl">MusicPlayer</aside>
         <aside>
-          <ul className="text-white font-serif">
+          <img className="fill-white md:hidden" src={menuDots} alt="menu icon" />
+          <ul className="hidden md:block text-white font-serif">
             {
               Links.map((link) => (
                 <li onClick={() => { handlePage(link.page) }} className="flex gap-5 items-center hover:text-emerald-400 transition-all duration-500 cursor-pointer" key={link.text}>
