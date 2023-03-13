@@ -1,15 +1,23 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import App from "../App";
+import ArroundU from "../components/pages/ArroundU";
+import Artists from "../components/pages/Artists";
+import Charts from "../components/pages/Charts";
+import Discover from "../components/pages/Discover";
 import Sidebar from "../components/sidebar/Sidebar";
 const Router = () => {
   return (
-    <BrowserRouter>
-      <Routes >
-        <Route element={<Sidebar />}>
-          <Route path="/" element={<App />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <div className="w-screen flex">
+      <BrowserRouter>
+        <Routes >
+          <Route element={<Sidebar />}>
+            <Route path="/" element={<Discover />} />
+            <Route path="/arroundu" element={<ArroundU />} />
+            <Route path="/artists" element={<Artists />} />
+            <Route path="/charts" element={<Charts />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
   )
 };
 
