@@ -1,5 +1,4 @@
 import { Outlet, useNavigate } from "react-router";
-import menuDots from "../../assets/menu-dots.svg"
 const Sidebar = () => {
   const navigate = useNavigate()
   const Links = [
@@ -30,16 +29,15 @@ const Sidebar = () => {
   }
   return (
     <>
-      <header className="w-full h-20 p-5 md:w-60 md:h-screen flex md:flex-col justify-between md:justify-start md:py-10 bg-black items-center gap-36">
-        <aside className=" text-emerald-400 font-serif text-3xl">MusicPlayer</aside>
+      <header className="w-full h-20 p-5 md:w-60 md:h-screen flex md:flex-col justify-center md:justify-start md:py-10 bg-black items-center gap-36">
+        <aside className="hidden md:block text-emerald-400 font-serif text-lg md:text-3xl">MusicPlayer</aside>
         <aside>
-          <img className="fill-white md:hidden" src={menuDots} alt="menu icon" />
-          <ul className="hidden md:block text-white font-serif">
+          <ul className=" flex flex-row md:flex-col gap-10 text-white font-serif">
             {
               Links.map((link) => (
-                <li onClick={() => { handlePage(link.page) }} className="flex gap-5 items-center hover:text-emerald-400 transition-all duration-500 cursor-pointer" key={link.text}>
-                  <svg className="fill-white hover:fill-emerald-400 transition-all duration-500" xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="16" height="16"><path d={link.image} /></svg>
-                  {link.text}
+                <li onClick={() => { handlePage(link.page) }} className="flex flex-col md:flex-row md:gap-5 items-center hover:text-emerald-400 transition-all duration-500 cursor-pointer" key={link.text}>
+                  <svg className=" fill-white hover:fill-emerald-400 transition-all duration-500" xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="16" height="16"><path d={link.image} /></svg>
+                  <h3 className="text-center gont-serif text-xs md:text-base">{link.text}</h3>
                 </li>
               ))
             }
